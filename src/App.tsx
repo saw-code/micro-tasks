@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {Header} from "./site/Header";
 import {Body} from "./site/Body";
@@ -21,12 +20,21 @@ function App() {
     {id: 11, name: 'Cristopher', age: 108}
   ]
 
+  const topCars = [
+    {manufacturer:'BMW', model:'m5cs'},
+    {manufacturer:'Mercedes', model:'e63s'},
+    {manufacturer:'Audi', model:'rs6'}
+  ]
+
+
   return (
     <div className="App">
       {/*<Header titleForHeader={"New Header"}/>*/}
       {/*<Body titleForBody={"New Body"}/>*/}
       {/*<Footer titleForFooter={"New Footer"}/>*/}
-      <NewComponent students={students}/>
+      {/*<NewComponent students={students}/>*/}
+
+      <NewComponent cars={topCars}/>
     </div>
   );
 }
