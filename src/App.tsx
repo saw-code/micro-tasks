@@ -5,8 +5,39 @@ import {Body} from "./site/Body";
 import {Footer} from "./site/Footer";
 import {NewComponent} from "./map/NewComponent";
 import {findAllByDisplayValue} from "@testing-library/react";
+import {Button} from "./components/Button";
 
 function App() {
+  const Button1Foo = (subscriber: string, age: number) => {
+    console.log(subscriber, age)
+  }
+
+  const Button2Foo = (subscriber: string) => {
+    console.log(subscriber)
+  }
+
+  const Button3Foo = () => {
+    console.log('Im stupid button')
+  }
+
+  return (
+    <div className="App">
+      {/*<button>MyYouTubeChanel-1</button>*/}
+      {/*<button>MyYouTubeChanel-2</button>*/}
+      <Button name={'MyYouTubeChanel-1'} callBack={() => Button1Foo('Im Vasya', 21)}/>
+      <Button name={'MyYouTubeChanel-2'} callBack={() => Button2Foo('Im Ivan')}/>
+      <Button name={'Stupid Button'} callBack={Button3Foo}/>
+    </div>
+  )
+}
+
+export default App;
+
+
+
+
+
+// function App() {
   // const myFirstSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
   //   console.log('Hello Im Vasya')
   // }
@@ -15,21 +46,21 @@ function App() {
   //   console.log('Hello Im Ivan')
   // }
 
-  const onClickHandler = (name: string) => {
-    console.log(`Hello I'm ${name}`)
-  }
+//   const onClickHandler = (name: string) => {
+//     console.log(`Hello I'm ${name}`)
+//   }
+//
+//
+//   return (
+//     <div className="App">
+//       {/*<button onClick={(event ) => {console.log('Hello!')}}>MyYouTubeChanel-1</button>*/}
+//       <button onClick={(event ) => onClickHandler('Vasya')}>MyYouTubeChanel-1</button>
+//       <button onClick={(event ) => onClickHandler('Ivan')}>MyYouTubeChanel-2</button>
+//     </div>
+//   )
+// }
 
-
-  return (
-    <div className="App">
-      {/*<button onClick={(event ) => {console.log('Hello!')}}>MyYouTubeChanel-1</button>*/}
-      <button onClick={(event ) => onClickHandler('Vasya')}>MyYouTubeChanel-1</button>
-      <button onClick={(event ) => onClickHandler('Ivan')}>MyYouTubeChanel-2</button>
-    </div>
-  )
-}
-
-export default App;
+// export default App;
 
 
 
