@@ -9,6 +9,7 @@ import {Button} from "./components/Button";
 
 type FilterType = 'All' | 'Dollars' | 'RUBLS'
 
+
 function App() {
   const [money, setMoney] = useState([
     {banknots: 'Dollars', value: 100, number: ' a1234567890'},
