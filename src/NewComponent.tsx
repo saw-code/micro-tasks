@@ -1,33 +1,49 @@
 import React from "react";
 
-type MoneyType = {
-  money: Array<ArrayObjectType>
+type StudentType = {
+  id: number
+  name: string
+  age: number
 }
 
-type ArrayObjectType = {
-  banknots: string,
-  value: number,
-  number: string
+type TopCarsType = {
+  manufacturer: string
+  model: string
 }
-export const NewComponent = (props: MoneyType) => {
+
+type NewComponentType = {
+  students: Array<StudentType>
+  topCars: Array<TopCarsType>
+  // students: StudentType[] второй вариант как можно протипизировать
+}
+
+export function NewComponent(props: NewComponentType) {
+
   return (
     <>
       <ul>
-        {currentMoney.map((objFromMoneyArr, index) => {
+        {props.students.map((objectFromStudentArray, index) => {
           return (
-            <li key={index}>
-              <span>{objFromMoneyArr.banknots}</span>
-              <span>{objFromMoneyArr.value}</span>
-              <span>{objFromMoneyArr.number}</span>
+            <li key={objectFromStudentArray.id}>
+              <span>{objectFromStudentArray.name}</span>
+              <span>age: {objectFromStudentArray.age}</span>
             </li>
           )
         })}
       </ul>
-      <div style={{marginLeft: '35px'}}>
-        <button onClick={() => onClickFilterHandler('All')}>All</button>
-        <button onClick={() => onClickFilterHandler('RUBLS')}>Rubles</button>
-        <button onClick={() => onClickFilterHandler('Dollars')}>Dollars</button>
-      </div>
+
+      <table>
+        {props.topCars.map((objectFromTopCarArray, index) => {
+          return (
+            <>
+              <tr>
+                <th>{objectFromTopCarArray.manufacturer}</th>
+                <th>{objectFromTopCarArray.model}</th>
+              </tr>
+            </>
+          )
+        })}
+      </table>
     </>
   )
 }
