@@ -5,7 +5,8 @@ function App() {
 
   // let a = 1
 
-  let [a, setA ]= useState(1)
+  let [a, setA ]= useState(1) // useState - ф-ция которая получает значение и
+    // возвращает массив из состояния(а) и метода(setA) к-е это состояние меняет
 
   const onClickHandler = ()=> {
     setA(++a)
