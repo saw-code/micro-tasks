@@ -1,15 +1,19 @@
-import React from "react";
+import React from 'react';
 
-type ButtonType = {
+type ButtonPropsType = {
   name: string
-  callBack: ()=> void // это означает что типом будет функция которая ничего не возвращает(void)
+  callBack: () => void
 }
-export function Button(props: ButtonType) {
-  const onClickHandler = ()=> {
+
+
+
+export function Button(props: ButtonPropsType) {
+  const onClickButtonHandler = () => {
     props.callBack()
+
   }
 
-  return(
-    <button onClick={onClickHandler}>{props.name}</button>
+  return (
+      <button onClick={onClickButtonHandler}>{props.name}</button>
   )
 }
